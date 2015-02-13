@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" 
+    android:layout_width="fill_parent"
+    android:background="@drawable/slant_left_bg"> -->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/slant_left_bg" >
+ 
+    <TableLayout 
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent"
+        android:background="@drawable/slant_left_bg">
+
+        <TableRow
+            style="@style/Row">
+        	<TextView
+        	    style="@style/MenuText.Title"
+            	android:text="@string/info_dbquickmenu" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- DosBox Cycles -->
+        <TableRow
+            android:id="@+id/tableRow_Cycles"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_cycles"
+            	android:layout_weight="0.5" 
+            	android:drawableLeft="@drawable/onebit_16" />            	
+        	<TextView
+        	    android:id="@+id/info_cycles"
+            	style="@style/MenuText.Row"
+            	android:text="Auto"
+            	android:layout_weight="0.5" 
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp"/>
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- DosBox FrameSkip -->
+        <TableRow
+            android:id="@+id/tableRow_FrameSkip"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_frameskip"
+            	android:layout_weight="0.5" 
+            	android:drawableLeft="@drawable/onebit_13" />
+        	<TextView
+        	    android:id="@+id/info_frameskip"
+            	style="@style/MenuText.Row"
+            	android:text="2"
+            	android:layout_weight="0.5" 
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <!-- Input Mode -->
+        <TableRow
+            android:id="@+id/tableRow_InputMode"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_inputmode"
+            	android:layout_weight="0.5" 
+            	android:drawableLeft="@drawable/onebit_27" />
+        	<TextView
+        	    android:id="@+id/info_inputmode"
+            	style="@style/MenuText.Row"
+            	android:text="Touchscreen"
+            	android:layout_weight="0.5"
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <!-- Tracking Mode -->
+        <TableRow
+            android:id="@+id/tableRow_Tracking"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_tracking"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/mouse_01" />
+        	<TextView
+        	    android:id="@+id/info_tracking"
+            	style="@style/MenuText.Row"
+            	android:text="Absolute"
+            	android:layout_weight="0.5"
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <!-- Virtual Keyboard -->
+        <TableRow
+            style="@style/Row.Click">
+        	<include
+        	    layout="@layout/kbdswitch" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- Virtual Joystick -->
+        <TableRow
+            style="@style/Row.Click">
+        	<include layout="@layout/joyswitch" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- Virtual Keys -->
+        <TableRow
+            style="@style/Row.Click">
+        	<include layout="@layout/buttonswitch" />
+        </TableRow>
+        <View style="@style/Row.Line" />         
+        <!-- Screen Scaling -->
+        <TableRow
+            style="@style/Row">
+        	<include layout="@layout/scaleswitch" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- Physical Mouse -->
+    <!--     <TableRow
+            android:id="@+id/tableRow_Mouse"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_mapmouse"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/mouse_01" />
+        	<TextView
+        	    android:id="@+id/info_tracking"
+            	style="@style/MenuText.Row"
+            	android:text="None"
+            	android:layout_weight="0.5"
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp" />
+        </TableRow>
+        <View style="@style/Row.Line" />  --> 
+        <!-- Physical Joy -->
+     <!--    <TableRow
+            android:id="@+id/tableRow_Joy"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_mapjoy"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/joystick" />
+        	<TextView
+        	    android:id="@+id/info_tracking"
+            	style="@style/MenuText.Row"
+            	android:text="None"
+            	android:layout_weight="0.5"
+            	android:drawableRight="@drawable/onebit_21"
+            	android:layout_marginRight="15dp" />
+        </TableRow>
+        <View style="@style/Row.Line" />  -->
+        <!-- Special Keys -->
+        <TableRow
+            android:id="@+id/tableRow_SpecialKeys"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_specialkeys"
+            	android:layout_weight="0.8" 
+            	android:drawableLeft="@drawable/lightning" />
+            <ImageView
+                style="@style/Row.Image"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/onebit_21" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <!-- Settings Menu -->
+	    <TableRow
+            android:id="@+id/tableRow_Settings"
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_settings"
+            	android:layout_weight="0.8"
+            	android:drawableLeft="@drawable/onebit_09" />
+            <ImageView
+                style="@style/Row.Image"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/onebit_21" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <TableRow
+            style="@style/Row"
+            android:layout_marginTop="20dp">
+        	<TextView
+        	    style="@style/MenuText.Title"
+            	android:text="@string/info_dbinfo" />
+        </TableRow>
+        <View style="@style/Row.Line" /> 
+        <!-- Current Governor -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_governor"
+            	android:layout_weight="0.5" 
+            	android:drawableLeft="@drawable/onebit_15" />
+        	<TextView
+        	    android:id="@+id/info_governor"
+            	style="@style/MenuText.Row"
+            	android:text="OnDemand"
+            	android:layout_weight="0.4" />
+            <ImageView
+                android:id="@+id/info_governor_warning"
+                style="@style/Row.Image"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/onebit_36" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- CPU Type -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_cputype"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/cpu" />
+        	<TextView
+        	    android:id="@+id/info_cputype"
+            	style="@style/MenuText.Row"
+            	android:text="ARMv7"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- CPU NEON -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_neon"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/cpu"  />
+        	<TextView
+        	    android:id="@+id/info_neon"
+            	style="@style/MenuText.Row"
+            	android:text="Yes"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />
+        <!-- Render Mode -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_rendermode"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/onebit_23" />
+        	<TextView
+        	    android:id="@+id/info_rendermode"
+            	style="@style/MenuText.Row"
+            	android:text="Canvas"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />        
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_dosmem"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/onebit_22" />
+        	<TextView
+        	    android:id="@+id/info_dosmem"
+            	style="@style/MenuText.Row"
+            	android:text="8 MB"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />        
+        <!-- DB Manager -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_manager"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/dbturbo" />
+        	<TextView
+        	    android:id="@+id/info_manager"
+            	style="@style/MenuText.Row"
+            	android:text="1.0.23"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />        
+        <!-- Dosbox Turbo -->
+        <TableRow
+            style="@style/Row.Click">
+        	<TextView
+            	style="@style/MenuText.Row"
+            	android:text="@string/info_version"
+            	android:layout_weight="0.5"
+            	android:drawableLeft="@drawable/dbturbo"  />
+        	<TextView
+        	    android:id="@+id/info_version"
+            	style="@style/MenuText.Row"
+            	android:text="2.0.0"
+            	android:layout_weight="0.5" />
+        </TableRow>
+        <View style="@style/Row.Line" />        
+        </TableLayout>
+    </ScrollView>
+<!-- </LinearLayout> -->

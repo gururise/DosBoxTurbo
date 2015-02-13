@@ -1,0 +1,16 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">   
+	<com.fishstix.dosboxfree.DBGLSurfaceView
+	    android:id="@+id/mSurf"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:background="@android:color/transparent">
+	</com.fishstix.dosboxfree.DBGLSurfaceView>
+	<!-- <include layout="@layout/button_layout"/>  --> 
+ 	<com.fishstix.dosboxfree.joystick.JoystickView
+	    android:id="@+id/mJoystickView"
+	    android:layout_gravity="bottom"
+	    android:layout_width="fill_parent"
+	    android:layout_height="175dp"
+	    android:background="@android:color/transparent" /> 
+	<include layout="@layout/buttons"/>	
+</merge>

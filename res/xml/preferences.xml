@@ -1,0 +1,709 @@
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:my="http://schemas.android.com/apk/res/"
+  xmlns:ads="http://schemas.android.com/apk/res-auto"
+  android:key="prefMainScreen">
+  <PreferenceCategory android:title="Advanced DosBox Config">
+  	 <PreferenceScreen
+		android:key="detail"
+		android:title="@string/pref_dbsettings"
+		android:summary="@string/pref_advconfig">
+	    <ListPreference
+    		android:key="dosmemsize"
+      		android:title="@string/pref_memtitle"
+      		android:entries="@array/dosmemsize"
+		    android:entryValues="@array/dosmemsize_values"
+		    android:defaultValue="8"
+      		android:summary="@string/pref_memsum" />
+	    <ListPreference
+    		android:key="dosframeskip"
+      		android:title="Frame Skip"
+      		android:entries="@array/dosframeskip"
+		    android:entryValues="@array/dosframeskip_values"
+		    android:defaultValue="2"
+      		android:summary="@string/pref_frameskip" />
+	    <ListPreference
+    		android:key="doscycles"
+      		android:title="Cycles"
+      		android:entries="@array/doscycles"
+		    android:entryValues="@array/doscycles_values"
+		    android:defaultValue="-1"      		
+      		android:summary="@string/pref_cycles" />
+		<ListPreference
+    		android:key="dosmachine"
+      		android:title="Machine Type"
+      		android:entries="@array/dosmachine"
+		    android:entryValues="@array/dosmachine_values"
+		    android:defaultValue="svga_s3"      		
+      		android:summary="@string/pref_machine" />  
+   		<ListPreference
+    		android:key="doscpu"
+      		android:title="CPU Core"
+      		android:entries="@array/doscpu"
+		    android:entryValues="@array/doscpu_values"
+		    android:defaultValue="dynamic"      		
+      		android:summary="@string/pref_cpucore" />
+   		<ListPreference
+    		android:key="doscputype"
+      		android:title="CPU Type"
+      		android:entries="@array/doscputype"
+		    android:entryValues="@array/doscputype_values"
+		    android:defaultValue="auto"      		
+      		android:summary="@string/pref_cputype" />
+   		<ListPreference
+      		android:key="dossbtype"
+      		android:title="Sound Device"
+	  		android:entries="@array/dossbtype"
+      		android:entryValues="@array/dossbtype_values"
+      		android:defaultValue="sb16"      		
+      		android:summary="@string/pref_sbtype" />
+	    <ListPreference
+      		android:key="dossbrate"
+      		android:title="Audio Freq Rate"
+	  		android:entries="@array/dossbrate"
+      		android:entryValues="@array/dossbrate_values"
+      		android:defaultValue="22050"      		
+      		android:summary="@string/pref_sbrate" />
+	    <ListPreference
+      		android:key="dosmixerblocksize"
+      		android:title="Audio Blocksize"
+	  		android:entries="@array/dosmixerblocksize"
+      		android:entryValues="@array/dosmixerblocksize_values"
+      		android:defaultValue="1024"      		
+      		android:summary="@string/pref_mixerblocksize" />
+	  	<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="dosmixerprebuffer"
+        	android:title="Audio Pre-Buffer"
+        	android:summary="@string/pref_mixerprebuffer"
+        	android:dialogMessage="Audio Pre-Buffer (default: 15)"
+        	android:defaultValue="15"
+        	android:max="100" />
+	  	<CheckBoxPreference
+      		android:key="dosmt32"
+      		android:title="MT-32 Midi Emulation"
+      		android:defaultValue="false"
+      		android:summary="Enable Roland MT-32 MIDI Emulation" />
+	  	<CheckBoxPreference
+      		android:key="dospcspeaker"
+      		android:title="PC Speaker"
+      		android:defaultValue="false"
+      		android:summary="Enable PC Speaker Support" />
+	    <CheckBoxPreference
+      		android:key="dostimedjoy"
+      		android:title="Timed Joystick"
+      		android:defaultValue="true"
+      		android:summary="Enable Timed intervals for joy axis (default true)" />      		
+	  	<ListPreference
+      		android:key="doskblayout"
+      		android:title="Keyboard Layout"
+	  		android:entries="@array/doskblayout"
+      		android:entryValues="@array/doskblayout_values"
+      		android:defaultValue="auto"      		
+      		android:summary="@string/pref_kblayout" />   			    
+	    <EditTextPreference
+      		android:key="dosautoexec"
+      		android:title="Autoexec"
+      		android:textSize="11sp"
+      		android:defaultValue="-1"    		
+      		android:summary="Edit the autoexec.bat" />	    
+<!--       	<CheckBoxPreference
+      		android:key="dosautocpu"
+      		android:title="Force CPU Auto"
+      		android:defaultValue="false"
+      		android:summary="Give CPU auto priority to reduce audio skipping (may limit max cycles)" />  -->
+	    <CheckBoxPreference
+      		android:key="dosxms"
+      		android:title="XMS Support"
+      		android:defaultValue="true"
+      		android:summary="Enable XMS Support" />
+	    <CheckBoxPreference
+      		android:key="dosems"
+      		android:title="EMS Support"
+      		android:defaultValue="true"
+      		android:summary="Enable EMS Support" />
+	    <CheckBoxPreference
+      		android:key="dosumb"
+      		android:title="UMB Support"
+      		android:defaultValue="true"
+      		android:summary="Enable UMB Support" />
+	    <CheckBoxPreference
+      		android:key="dospnp"
+      		android:title="ISA PnP Support"
+      		android:defaultValue="false"
+      		android:summary="Emulate ISA Plug &amp; Play BIOS. Enable if booting Win 9x" />
+	    <CheckBoxPreference
+      		android:key="dosglide"
+      		android:title="3DFX Glide Suppport"
+      		android:defaultValue="false"
+      		android:summary="Voodoo 1 Glide Emulation (Warning: Experimental!)" />	   
+	    <CheckBoxPreference
+      		android:key="dosipx"
+      		android:title="IPX Networking"
+      		android:defaultValue="false"
+      		android:summary="Enable IPX Network Emulation" />
+	    <CheckBoxPreference
+      		android:key="dosmanualconf"
+      		android:title="Manual Mode"
+      		android:defaultValue="false"
+      		android:summary="Disable over-write of dosbox.conf" />
+	    <EditTextPreference
+      		android:key="dosmanualconf_file"
+      		android:title="Config Location"
+      		android:defaultValue="-1"    		
+      		android:summary="@string/pref_manualconf_file" />
+	    <Preference
+	        android:key="doseditconf_file"
+	        android:title="Edit Config File"
+	        android:summary="@string/pref_editconf_file" />
+	 </PreferenceScreen>
+  </PreferenceCategory>
+  <PreferenceCategory android:title="Input Preferences">
+      <ListPreference
+      	android:key="confinputmode"
+      	android:title="Select Input Mode"
+	  	android:entries="@array/confinputmode"
+      	android:entryValues="@array/confinputmode_values"
+      	android:defaultValue="0"
+      	android:summary="Select Joystick, Mouse or Scroll input" />
+      <ListPreference
+      	android:key="confmousetracking"
+      	android:title="Mouse Tracking"
+	  	android:entries="@array/confmousetracking"
+      	android:entryValues="@array/confmousetracking_values"
+      	android:defaultValue="1"
+      	android:summary="Choose Absolute or Relative mouse tracking" />  
+      <PreferenceScreen
+ 	      android:title="Mouse Sensitivity"
+ 	      android:summary="Adjust mouse sensitivity for Relative Mouse Tracking"> 	  
+	  		<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confmousesensitivityx"
+       			android:title="X Sensitivity"
+       			android:summary="Relative Mouse Tracking Sensitivity X Direction"
+       			android:dialogMessage="Relative X Mouse Sensitivity (def: 50)"
+       			android:defaultValue="50"
+       			android:max="300" />
+	  		<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confmousesensitivityy"
+       			android:title="Y Sensitivity"
+       			android:summary="Relative Mouse Tracking Sensitivity Y Direction"
+       			android:dialogMessage="Relative Y Mouse Sensitivity (def: 50)"
+       			android:defaultValue="50"
+       			android:max="300" />
+	  </PreferenceScreen>      
+      <ListPreference
+      	android:key="confinputlatency"
+      	android:title="Input Latency"
+	  	android:entries="@array/confinputlatency"
+      	android:entryValues="@array/confinputlatency_values"
+      	android:defaultValue="0"
+      	android:summary="Select Latency of input devices" />
+      <!--  temp -->
+ 	  <PreferenceScreen
+ 	      android:title="Virtual Joystick"
+ 	      android:summary="Virtual Joystick Settings">
+	  	<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confjoyx"
+       		android:title="Joy Center X"
+       		android:summary="Adjust Joystick Calibration X-Axis"
+       		android:dialogMessage="Joystick Calibration X (def: 100)"
+       		android:defaultValue="100"
+       		android:max="200" />      
+   	  	<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confjoyy"
+	       	android:title="Joy Center Y"
+    	   	android:summary="Adjust Joystick Calibration Y-Axis"
+       		android:dialogMessage="Joystick Calibration Y (def: 100)"
+       		android:defaultValue="100"
+       		android:max="200" />
+	  	<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confjoysize"
+       		android:title="Joystick Size"
+       		android:summary="Setting Size too high may cause overlap"
+       		android:dialogMessage="Joystick Size (def: 5)"
+       		android:defaultValue="5"
+       		android:max="10" />	  	
+	  	<com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confjoytrans"
+       		android:title="Joystick Translucency"
+       		android:summary="Adjust Translucency of the Joystick"
+       		android:dialogMessage="Joystick Tranlucency (def: 80)"
+       		android:defaultValue="80"
+       		android:max="235" />
+	  	<CheckBoxPreference
+      		android:key="confjoymousemode"
+      		android:title="Use Joystick as Mouse"
+      		android:defaultValue="false"
+      		android:summary="@string/pref_mousejoymode" /> 	
+   	  </PreferenceScreen>
+   	  <!-- end temp -->
+      <CheckBoxPreference
+      	android:key="confjoyoverlay"
+      	android:title="Overlay Joystick"
+      	android:defaultValue="false"
+      	android:summary="Show a Virtual Joystick on screen" />
+      <CheckBoxPreference
+      	android:key="confbuttonoverlay"
+      	android:title="Overlay Buttons"
+      	android:defaultValue="false"
+      	android:summary="Show Virtual Buttons on screen" />
+      <ListPreference
+      	android:key="confbuttonlocation"
+      	android:title="Button Location"
+	  	android:entries="@array/confbuttonlocation"
+      	android:entryValues="@array/confbuttonlocation_values"
+      	android:defaultValue="1"
+      	android:summary="Select location of Virtual On-Screen Buttons" />
+  </PreferenceCategory>
+   	  	
+  <PreferenceCategory android:title="Gestures and Mappings">
+	  	<PreferenceScreen
+			android:key="dpad_mappings"
+			android:title="Button/Controller Maps"
+			android:summary="Mappings for Hardware Buttons/Controllers">
+
+	   			<!-- Default DPAD_UP -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom0"
+      				android:title="Map Custom Button 0"
+		    		my:defaultHardCode="19"
+		    		my:defaultDosCode="19"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>	   			
+	   			<!-- Default DPAD_DOWN -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom1"
+      				android:title="Map Custom Button 1"
+		    		my:defaultHardCode="20"
+		    		my:defaultDosCode="20"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<!-- Default DPAD_LEFT -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom2"
+      				android:title="Map Custom Button 2"
+		    		my:defaultHardCode="21"
+		    		my:defaultDosCode="21"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<!-- Default DPAD_RIGHT -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom3"
+      				android:title="Map Custom Button 3"
+		    		my:defaultHardCode="22"
+		    		my:defaultDosCode="22"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<!-- Default DPAD_CENTER -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom4"
+      				android:title="Map Custom Button 4"
+		    		my:defaultHardCode="23"
+		    		my:defaultDosCode="23"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<!-- Default BACK -> ESC -->
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom5"
+      				android:title="Map Custom Button 5"
+		    		my:defaultHardCode="4"
+		    		my:defaultDosCode="111"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom6"
+      				android:title="Map Custom Button 6"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom7"
+      				android:title="Map Custom Button 7"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom8"
+      				android:title="Map Custom Button 8"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom9"
+      				android:title="Map Custom Button 9"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom10"
+      				android:title="Map Custom Button 10"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom11"
+      				android:title="Map Custom Button 11"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom12"
+      				android:title="Map Custom Button 12"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom13"
+      				android:title="Map Custom Button 13"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom14"
+      				android:title="Map Custom Button 14"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom15"
+      				android:title="Map Custom Button 15"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom16"
+      				android:title="Map Custom Button 16"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom17"
+      				android:title="Map Custom Button 17"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom18"
+      				android:title="Map Custom Button 18"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom19"
+      				android:title="Map Custom Button 19"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom20"
+      				android:title="Map Custom Button 20"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom21"
+      				android:title="Map Custom Button 21"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom22"
+      				android:title="Map Custom Button 22"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom23"
+      				android:title="Map Custom Button 23"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom24"
+      				android:title="Map Custom Button 24"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom25"
+      				android:title="Map Custom Button 25"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom26"
+      				android:title="Map Custom Button 26"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom27"
+      				android:title="Map Custom Button 27"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom28"
+      				android:title="Map Custom Button 28"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<com.fishstix.dosboxfree.dosboxprefs.preference.GamePreference
+    				android:key="confmap_custom29"
+      				android:title="Map Custom Button 29"
+		    		my:defaultHardCode="-1"
+		    		my:defaultDosCode="-1"
+		    		android:defaultValue="0"
+      				android:summary="None"	   			    
+	   			/>
+	   			<Preference
+       				android:key="confcustom_add"
+       				android:title="Add Button Mapping"
+       				android:summary="Add another button/controller map" />
+	   				
+	   			<Preference
+       				android:key="confcustom_clear"
+       				android:title="Clear All Mappings"
+       				android:summary="Clear all button/controller maps" />
+	   				   			
+	   		<PreferenceCategory android:title="Advanced Controller Settings">
+<!-- 	   		<Preference
+       			android:key="confmapanalog_mouse"
+       			android:title="Map analog stick to Mouse"
+       			android:summary="Select an Analog Stick to map to Mouse Movement" />
+	   		<Preference
+       			android:key="confmapanalog_joy"
+       			android:title="Map analog stick to Joystick"
+       			android:summary="Select an Analog Stick to map to DOS Joystick" />  -->
+	   <!--    	<CheckBoxPreference
+    	  		android:key="confgenericmotion"
+      			android:title="Enable Analog Sticks"
+      			android:defaultValue="true"
+      			android:summary="Map Analog Sticks to Mouse and Joystick" /> -->
+	    	<ListPreference
+      			android:key="confanalogsticks"
+      			android:title="Physical Analog Sticks"
+   				android:entries="@array/confanalog_maps"
+	    		android:entryValues="@array/confanalog_maps_values"
+      			android:defaultValue="0"      	
+      			android:summary="Configure Physical Analog Stick Mappings" />	      		   			   		
+	   		<CheckBoxPreference
+      			android:key="confenabledpad"
+      			android:title="Map DPad to Input Device"
+      			android:defaultValue="false"
+      			android:summary="Use DPAD as a Mouse or Joystick device" />
+	   		<EditTextPreference
+				android:key="confdpadsensitivity"
+				android:title="DPad sensitivity"
+				android:summary="Phone DPad/Optical Trackpad sensitivity value"
+      			android:defaultValue="7"
+				android:dialogTitle="Range is (1 - 25) [default 7]" />
+	   		</PreferenceCategory>
+	   	</PreferenceScreen>
+      
+	<PreferenceScreen
+		android:key="confgestures"
+		android:title="Gesture Mapping"
+		android:summary="Customize gesture actions">
+<!-- 	   	<ListPreference
+    		android:key="confgesture_swipeup"
+      		android:title="Swipe Up Action"
+      		android:entries="@array/confgesture_swipe"
+		    android:entryValues="@array/confgesture_swipe_values"
+		    android:defaultValue="0"
+      		android:summary="Configure Swipe Up action"
+    	/>
+	   	<ListPreference 
+    		android:key="confgesture_swipedown"
+      		android:title="Swipe Down Action"
+      		android:entries="@array/confgesture_swipe"
+		    android:entryValues="@array/confgesture_swipe_values"
+		    android:defaultValue="0"
+      		android:summary="Configure Swipe Down action"
+    	/>  -->
+	    <ListPreference
+      		android:key="confgesture_singletap"
+      		android:title="Single Tap Action"
+   			android:entries="@array/confgesture_singletap"
+	    	android:entryValues="@array/confgesture_singletap_values"
+      		android:defaultValue="3"      	
+      		android:summary="Configure Single Tap for Touchscreen Mouse" />
+	    <ListPreference
+      		android:key="confgesture_doubletap"
+      		android:title="Double Tap Action"
+   			android:entries="@array/confgesture_doubletap"
+	    	android:entryValues="@array/confgesture_doubletap_values"
+      		android:defaultValue="4"      	
+      		android:summary="Configure Double Tap for TouchScreen Mouse" />
+	    <ListPreference
+      		android:key="confgesture_twofinger"
+      		android:title="Two Finger Action"
+   			android:entries="@array/confgesture_singletap"
+	    	android:entryValues="@array/confgesture_singletap_values"
+      		android:defaultValue="0"      	
+      		android:summary="Configure Two Finger Tap for Touchscreen Mouse" />
+	    <CheckBoxPreference
+      		android:key="confgesture_longpress"
+      		android:title="Enable Long Press"
+      		android:defaultValue="true"
+      		android:summary="Hold finger after gesture to emulate mouse hold" />
+	    </PreferenceScreen>    	
+      <CheckBoxPreference
+     	android:key="confaltfix"
+     	android:title="Use physical ALT"
+     	android:defaultValue="false"
+     	android:summary="Use physical left ALT key instead of virt. left ALT" />    
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Screen and Rotation Settings">
+  	  <CheckBoxPreference
+      	android:key="confscale"
+      	android:title="Screen Scaling"
+      	android:defaultValue="true"
+      	android:summary="Enable Screen Scaling" />  	  
+	  <com.fishstix.dosboxfree.dosboxprefs.preference.SeekBarPreference android:key="confresizefactor"
+        android:title="Screen Scale Factor"
+        android:summary="Scale Factor for Scale Mode (Landscape)"
+        android:dialogMessage="Landscape Scale Factor"
+        android:defaultValue="100"
+        android:max="100" />
+      <ListPreference
+      	android:key="confscalelocation"
+      	android:title="Scaled Screen Location"
+	  	android:entries="@array/confscalelocation"
+      	android:entryValues="@array/confscalelocation_values"
+      	android:defaultValue="0"      		
+      	android:summary="When scaling is on, choose screen location" />      
+	  <ListPreference
+      	android:key="confscalemode"
+      	android:title="Scale Quality"
+	  	android:entries="@array/confscalemode"
+      	android:entryValues="@array/confscalemode_values"
+      	android:defaultValue="0"      		
+      	android:summary="Select Fast or HQ Scaling" />
+	  <CheckBoxPreference
+      	android:key="confgpu"
+      	android:title="GPU Rendering"
+      	android:defaultValue="false"
+      	android:summary="Offload graphics rendering to GPU" />
+  	  <ListPreference
+     	android:key="confrotation"
+      	android:title="Rotation Settings"
+   		android:entries="@array/confrotation"
+	    android:entryValues="@array/confrotation_values"
+      	android:defaultValue="0"      	
+      	android:summary="Configure Auto/Portrait/Landscape rotation" />
+  	  <CheckBoxPreference
+      	android:key="confkeepaspect"
+      	android:title="Keep Aspect Ratio"
+      	android:defaultValue="true"
+      	android:summary="Maintain Scale Aspect Ratio in Landscape Mode" />
+  	  <ListPreference
+     	android:key="confslidingmenu"
+      	android:title="QuickMenu Display"
+   		android:entries="@array/confslidingmenu"
+	    android:entryValues="@array/confslidingmenu_values"
+      	android:defaultValue="0"      	
+      	android:summary="Change how the QuickMenu slides" />	    	  
+    </PreferenceCategory>
+
+  <PreferenceCategory android:title="Sound Preferences">
+  	  <CheckBoxPreference
+      	android:key="confsound"
+      	android:title="Enable Sound"
+      	android:defaultValue="true"
+      	android:summary="Emulate Audio Output (disable for more speed)" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="Performance Tweaks">
+      <CheckBoxPreference
+      	android:key="confturbocycle"
+      	android:title="Turbo Cycles"
+      	android:defaultValue="false"
+      	android:summary="Experimental Turbo Cycling (may cause sound problems)" />
+      <CheckBoxPreference
+      	android:key="confturbovga"
+      	android:title="Turbo VGA"
+      	android:defaultValue="true"
+      	android:summary="Experimental Turbo VGA" />
+      <CheckBoxPreference
+      	android:key="confturbomixer"
+      	android:title="Turbo Audio"
+      	android:defaultValue="true"
+      	android:summary="Experimental Low Latency Audio" />
+  </PreferenceCategory>
+  <PreferenceCategory 
+      android:key="prefCatOther"
+      android:title="Other">
+    <Preference
+       android:key="confreset"
+       android:title="Reset to Default"
+       android:summary="Reset all preferences to default values" />	
+    <CheckBoxPreference
+      	android:key="confdebug"
+      	android:title="Enable Debug"
+      	android:defaultValue="false"      	
+      	android:summary="Enable Debug Mode (SLOW)" />
+    <ListPreference
+     	android:key="confoptimization"
+      	android:title="Optimizations"
+   		android:entries="@array/confoptimization"
+	    android:entryValues="@array/confoptimization_values"
+      	android:defaultValue="2"      	
+      	android:summary="Change optimizations (bugfix for some ASUS devices)" />    
+    <Preference
+        android:key="help"
+        android:title="Help"
+        android:summary="View the FAQ and get Help">
+        <intent
+        	android:action="android.intent.action.VIEW"
+        	android:data="http://sites.google.com/site/dosboxturbo/" />
+    </Preference>
+    <Preference
+        android:key="version"
+        android:title="Version"
+        android:summary=""/>
+  </PreferenceCategory>
+</PreferenceScreen>

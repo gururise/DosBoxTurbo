@@ -1,0 +1,174 @@
+--- src\hardware\pcspeaker.cpp	2010-05-10 18:43:54.000000000 -0000
++++ src\hardware\pcspeaker.cpp	2013-12-30 10:27:53.000000000 -0000
+@@ -27,12 +27,21 @@
+ 
+ 
+ #ifndef PI
+ #define PI 3.14159265358979323846
+ #endif
+ 
++static struct WizardryFixes
++{
++	int mode;
++	float offset;
++	int wiz6_skip_hack;
++	int wiz7_ambient_hack;
++}
++g_wizardry;
++
+ #define SPKR_ENTRIES 1024
+ #define SPKR_VOLUME 5000
+ //#define SPKR_SHIFT 8
+ #define SPKR_SPEED (float)((SPKR_VOLUME*2)/0.070f)
+ 
+ enum SPKR_MODES {
+@@ -170,18 +179,62 @@
+ 	spkr.last_ticks=PIC_Ticks;
+ 	float newindex=PIC_TickIndex();
+ 	ForwardPIT(newindex);
+ 	switch (mode) {
+ 	case 0:		/* Mode 0 one shot, used with realsound */
+ 		if (spkr.mode!=SPKR_PIT_ON) return;
+-		if (cntr>80) { 
+-			cntr=80;
++
++		if ( g_wizardry.mode )
++		{
++			if ( g_wizardry.wiz6_skip_hack )
++			{
++				--g_wizardry.wiz6_skip_hack;
++				AddDelayEntry(newindex,spkr.pit_last);
++			}
++			else if ( cntr <= 256 )
++			{
++				if ( g_wizardry.wiz7_ambient_hack )
++				{
++					if ( cntr == 10 || cntr == 11 ) {
++						g_wizardry.offset = -1375.0f; // Ambient Hack.
++					} else {
++						g_wizardry.offset = -(float)SPKR_VOLUME;
++					}
++
++					g_wizardry.wiz7_ambient_hack = 0;
++				}
++
++				if ( cntr > 80 ) {
++					cntr = 80;
++				}
++
++				spkr.pit_last=(((float)cntr)*(SPKR_VOLUME/40.0f))+(g_wizardry.offset);
++
++				AddDelayEntry(newindex,spkr.pit_last);
++				spkr.pit_index=0;
++			}
++			else
++			{ 
++				if ( cntr == 65536 ) {
++					g_wizardry.wiz6_skip_hack = 52; // ignoring Wiz6 gibberish
++				}
++			}
+ 		}
+-		spkr.pit_last=((float)cntr-40)*(SPKR_VOLUME/40.0f);
+-		AddDelayEntry(newindex,spkr.pit_last);
+-		spkr.pit_index=0;
++		else
++		{
++			// Default DosBox behaviour
++
++			if (cntr>80) { 
++				cntr=80;
++			}
++			
++			spkr.pit_last=((float)cntr-40)*(SPKR_VOLUME/40.0f);
++			AddDelayEntry(newindex,spkr.pit_last);
++			spkr.pit_index=0;
++		}
++
+ 		break;
+ 	case 1:
+ 		if (spkr.mode!=SPKR_PIT_ON) return;
+ 		spkr.pit_last=SPKR_VOLUME;
+ 		AddDelayEntry(newindex,spkr.pit_last);
+ 		break;
+@@ -232,20 +285,48 @@
+ 		break;
+ 	case 1:
+ 		spkr.mode=SPKR_PIT_OFF;
+ 		AddDelayEntry(newindex,-SPKR_VOLUME);
+ 		break;
+ 	case 2:
+-		spkr.mode=SPKR_ON;
+-		AddDelayEntry(newindex,SPKR_VOLUME);
++		if ( g_wizardry.mode )
++		{
++			// Wizardry Fix
++
++			spkr.mode=SPKR_ON;
++			AddDelayEntry(newindex,spkr.pit_last);
++		}
++		else
++		{
++			// Default DosBox behaviour
++
++			spkr.mode=SPKR_ON;
++			AddDelayEntry(newindex,SPKR_VOLUME);
++		}
+ 		break;
+ 	case 3:
+-		if (spkr.mode!=SPKR_PIT_ON) {
+-			AddDelayEntry(newindex,spkr.pit_last);
+-		}
+-		spkr.mode=SPKR_PIT_ON;
++		if ( g_wizardry.mode )
++		{
++			// Wizardry Fix
++
++			spkr.mode=SPKR_PIT_ON;
++			AddDelayEntry(newindex,spkr.pit_last);
++
++			if ( g_wizardry.mode == 7 ) {
++				g_wizardry.wiz7_ambient_hack = 1;
++			}
++		}
++		else
++		{
++			// Default DosBox behaviour
++
++			if (spkr.mode!=SPKR_PIT_ON) {
++				AddDelayEntry(newindex,spkr.pit_last);
++			}
++			spkr.mode=SPKR_PIT_ON;
++		}
+ 		break;
+ 	};
+ }
+ 
+ static void PCSPEAKER_CallBack(Bitu len) {
+ 	Bit16s * stream=(Bit16s*)MixTemp;
+@@ -326,12 +407,26 @@
+ 	MixerObject MixerChan;
+ public:
+ 	PCSPEAKER(Section* configuration):Module_base(configuration){
+ 		spkr.chan=0;
+ 		Section_prop * section=static_cast<Section_prop *>(configuration);
+ 		if(!section->Get_bool("pcspeaker")) return;
++
++		int wizpopfix = section->Get_int("wizpopfix");
++		if ( wizpopfix == 6 ) {
++			g_wizardry.mode = 6; // Custom fixes for popping.
++			g_wizardry.offset = 2625.0f-(float)SPKR_VOLUME;
++		} else if ( wizpopfix == 7 ) {
++			g_wizardry.mode = 7; // Custom fixes for popping.
++			g_wizardry.offset = -(float)SPKR_VOLUME;
++		} else {
++			g_wizardry.mode = 0; // Default DOSBOX behaviour
++		}
++		g_wizardry.wiz6_skip_hack = 0;
++		g_wizardry.wiz7_ambient_hack = 0;
++		
+ 		spkr.mode=SPKR_OFF;
+ 		spkr.last_ticks=0;
+ 		spkr.last_index=0;
+ 		spkr.rate=section->Get_int("pcrate");
+ 		spkr.pit_max=(1000.0f/PIT_TICK_RATE)*65535;
+ 		spkr.pit_half=spkr.pit_max/2;

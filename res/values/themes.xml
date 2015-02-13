@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Theme.NoBackground" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="MenuText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="MenuText.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="MenuText.Row">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+	<style name="Row">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+	</style>
+	<style name="Row.Click">
+	    <item name="android:background">@drawable/row</item>
+	</style>
+    <style name="Row.Line">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="Row.Image">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_weight">0.1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+</resources>

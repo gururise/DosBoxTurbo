@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FreeBox</string>
+    <string name="debug">WARNING: DEBUG Mode is Enabled</string>
+    <string name="info_slider">Information</string>
+    <string name="settings_slider">Settings</string>
+    <string name="menu_keyboard">Keyboard</string>
+    <string name="menu_joystick">Joystick</string>
+    <string name="menu_inputmethod">Input Method</string>
+    <string name="menu_specialkeys">Special Keys</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_exit">Exit</string>
+    
+    <string name="input_touchscreen">Touchscreen</string>
+    <string name="input_joystick">Joystick</string>
+    <string name="input_mouse">Mouse/Stylus</string>
+    <string name="input_scroll">Scroll Screen</string>
+    
+    <string name="info_dbquickmenu">DosBox QuickMenu</string>
+    <string name="info_cycles">Cycles:</string>
+    <string name="info_frameskip">FrameSkip:</string>
+    <string name="info_inputmode">Input Mode:</string>
+    <string name="info_tracking">Tracking:</string>
+    <string name="info_keyboard">Virtual Keyboard</string>
+    <string name="info_joystick">Virtual Joystick</string>
+    <string name="info_scale">Screen Scaling</string>
+    <string name="info_specialkeys">Send Special Key</string>
+    <string name="info_settings">Settings Menu</string>
+    <string name="info_governor">CPU Governor:</string>
+    <string name="info_cputype">CPU Family:</string>
+    <string name="info_neon">CPU NEON:</string>
+    <string name="info_dosmem">DOS Memory:</string>
+    <string name="info_manager">DB Manager:</string>
+    <string name="info_version">Version:</string>
+    <string name="info_buttons">Virtual Buttons</string>
+    <string name="info_rendermode">Render Mode:</string>
+    <string name="info_dbinfo">System Information</string>
+    <string name="info_mapmouse">Mouse Map:</string>
+    <string name="info_mapjoy">Joy Map:</string>
+    
+    <string name="fastforward">Fast Forward</string>
+    <string name="auto">Auto</string>
+    <string name="notinstalled">Not Installed</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="restart">Restart for changes to take effect</string>
+    <string name="manual">Manually edit /sdcard/dosbox.conf to set configuration</string>
+    <string name="error">An unknown error occurred</string>
+    <string name="cont">Continue</string>
+    <string name="cycles">DosBox Cycles: </string>
+    <string name="select_dos_key">Select DOS Key Mapping</string>
+    <string name="select_controller_key">Press Hardware Key or select Virtual Button:</string>
+    <string name="select_analog_stick">Move the analog stick in all directions</string>
+	<string name="undefined">undefined</string>    
+	<string name="clear">Clear</string>
+	<string name="keyboard">Keyboard</string>
+	<string name="noeditor">No system text editor installed.</string>
+	<string name="confirmreset">Confirm reset to default?</string>
+	<string name="confirmclear">Confirm clear all button maps?</string>
+	<string name="duplicatemap">Error: Duplicate Button Map. Try again.</string>
+	<string name="nomoremaps">No more hardware keymaps available.</string>
+	<string name="gplsource">Copy source code to SD Card?</string>
+	<string name="dontkeepactivities">ERROR: Don\'t keep activies Dev Option enabled! (See FAQ)</string>
+	<string name="mt32missing">MT32 ROM missing, please see FAQ for MIDI emulation</string>
+	<string name="glidenogpu">GPU Rendering not compatible with experimental Glide emulation.</string>
+	
+	<!-- Preferences -->
+	<string name="pref_advconfig">Advanced DosBox Config</string>
+	<string name="pref_dbsettings">DosBox Settings</string>
+	<string name="pref_memtitle">Memory Size</string>
+	<string name="pref_memsum">Set the amount of memory available to DOS</string>
+	<string name="pref_frameskip">Set the FrameSkip amount</string>
+	<string name="pref_cycles">DosBox Cycles (setting too high may cause lag)</string>
+	<string name="pref_machine">DosBox Machine Emulation Setting</string>
+	<string name="pref_cpucore">DosBox CPU Core Setting</string>
+	<string name="pref_cputype">DosBox CPU Type Setting</string>
+	<string name="pref_sbtype">Choose Soundblaster Emulation</string>
+	<string name="pref_sbrate">Choose the Audio Sample Rate/Quality</string>
+	<string name="pref_mixerblocksize">Audio Mixer Blocksize (larger values may reduce skipping)</string>
+	<string name="pref_mixerprebuffer">Audio Mixer Pre-Buffer (larger values may reduce skipping)</string>
+	<string name="pref_kblayout">Choose the Locale for the Keyboard Layout</string>
+	<string name="pref_manualconf_file">Choose name/location of the dosbox config file</string>
+	<string name="pref_editconf_file">Edit with system text editor (if installed)</string>
+	
+	<string name="pref_mousejoymode">Use Joystick to control Mouse Pointer</string>
+<!--    <string name="absdefault">Absolute Tracking Calibration Reset</string>
+    <string name="abscalibrate">Tap visible DOS pointer to calibrate</string>
+    <string name="abscalibrate_success">Mouse Pointer Calibrated</string> -->
+    <!--  DOSBOX SETTINGS  -->
+    <string-array name="dosmemsize">
+  		<item>1 MB</item>
+  		<item>2 MB</item>
+  		<item>4 MB</item>
+  		<item>8 MB</item>
+  		<item>12 MB</item>
+  		<item>16 MB</item>
+  		<item>24 MB</item>
+  		<item>32 MB</item>
+  		<item>64 MB</item>
+  		<item>128 MB</item>
+  		<item>256 MB</item>
+  	</string-array>
+  	<string-array name="dosmemsize_values">
+  		<item>1</item>
+  		<item>2</item>
+  		<item>4</item>
+  		<item>8</item>
+  		<item>12</item>
+  		<item>16</item>
+  		<item>24</item>
+  		<item>32</item>
+  		<item>64</item>
+  		<item>128</item>
+  		<item>256</item>
+  	</string-array>
+    <string-array name="dosframeskip">
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2 (default)</item>
+  		<item>3</item>
+  		<item>4</item>
+  		<item>5</item>
+  		<item>6</item>
+  		<item>7</item>
+  		<item>8</item>
+  		<item>9</item>
+  		<item>10</item>
+  	</string-array>
+  	<string-array name="dosframeskip_values">
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2</item>
+  		<item>3</item>
+  		<item>4</item>
+  		<item>5</item>
+  		<item>6</item>
+  		<item>7</item>
+  		<item>8</item>
+  		<item>9</item>
+  		<item>10</item>
+  	</string-array>
+    <string-array name="doscycles">
+  		<item>auto (default)</item>
+  		<item>1000</item>
+  		<item>2000</item>
+  		<item>3000</item>
+  		<item>4000</item>
+  		<item>5000</item>
+  		<item>6000</item>
+  		<item>7000</item>
+  		<item>8000</item>
+  		<item>9000</item>
+  		<item>10000</item>
+  		<item>11000</item>
+  		<item>12000</item>
+  		<item>13000</item>
+  		<item>14000</item>
+  		<item>15000</item>  		
+  		<item>16000</item>
+  		<item>17000</item>
+  		<item>18000</item>
+  		<item>19000</item>
+  		<item>20000</item>
+  		<item>21000</item>
+  		<item>22000</item>
+  		<item>23000</item>
+  		<item>24000</item>
+  		<item>25000</item>
+  		<item>26000</item>
+  		<item>27000</item>
+  		<item>28000</item>
+  		<item>29000</item>
+  		<item>30000</item>
+  		<item>31000</item>
+  		<item>32000</item>
+  		<item>33000</item>
+  		<item>34000</item>
+  		<item>35000</item>		
+  		<item>36000</item>		
+  		<item>37000</item>		
+  		<item>38000</item>		
+   		<item>39000</item>		 		
+   		<item>40000</item>		 		
+  		<item>41000</item>		
+  		<item>42000</item>		
+  		<item>43000</item>		
+  		<item>44000</item>		
+   		<item>45000</item>		 		
+   	</string-array>
+  	<string-array name="doscycles_values">
+  		<item>-1</item>
+  		<item>1000</item>
+  		<item>2000</item>
+  		<item>3000</item>
+  		<item>4000</item>
+  		<item>5000</item>
+  		<item>6000</item>
+  		<item>7000</item>
+  		<item>8000</item>
+  		<item>9000</item>
+  		<item>10000</item>
+  		<item>11000</item>
+  		<item>12000</item>
+  		<item>13000</item>
+  		<item>14000</item>
+  		<item>15000</item>
+  		<item>16000</item>
+  		<item>17000</item>
+  		<item>18000</item>
+  		<item>19000</item>
+  		<item>20000</item>		 
+  		<item>21000</item>
+  		<item>22000</item>
+  		<item>23000</item>
+  		<item>24000</item>
+  		<item>25000</item>
+  		<item>26000</item>
+  		<item>27000</item>		 
+  		<item>28000</item>		 
+  		<item>29000</item>
+  		<item>30000</item>
+  		<item>31000</item>
+  		<item>32000</item>
+  		<item>33000</item>
+  		<item>34000</item>
+  		<item>35000</item>		
+  		<item>36000</item>		
+  		<item>37000</item>		
+  		<item>38000</item>		
+   		<item>39000</item>		 		
+   		<item>40000</item>
+  		<item>41000</item>		
+  		<item>42000</item>		
+  		<item>43000</item>		
+  		<item>44000</item>		
+   		<item>45000</item>		 		
+   	</string-array>
+    <string-array name="dosmachine">
+  		<item>svga_s3 (recommended)</item>
+  		<item>vgaonly</item>
+  		<item>ega</item>
+  		<item>pcjr</item>
+  		<item>tandy</item>
+  		<item>cga</item>
+  		<item>hercules</item>
+  	</string-array>
+  	<string-array name="dosmachine_values">
+  		<item>svga_s3</item>
+ 		<item>vgaonly</item>
+  		<item>ega</item>
+  		<item>pcjr</item>
+  		<item>tandy</item>
+  		<item>cga</item>
+  		<item>hercules</item>
+  	</string-array>  	
+    <string-array name="doscpu">
+  		<item>dynamic (fastest)</item>
+  		<item>auto</item>
+  		<item>normal</item>
+  		<item>simple</item>
+  	</string-array>
+  	<string-array name="doscpu_values">
+  		<item>dynamic</item>
+ 		<item>auto</item>
+  		<item>normal</item>
+  		<item>simple</item>
+  	</string-array>
+    <string-array name="doscputype">
+  		<item>auto (fastest)</item>
+  		<item>386</item>
+  		<item>486</item>
+  		<item>pentium</item>
+  		<item>pentium_mmx</item>
+  	</string-array>
+  	<string-array name="doscputype_values">
+  		<item>auto</item>
+  		<item>386</item>
+  		<item>486</item>
+  		<item>pentium</item>
+  		<item>pentium_mmx</item>
+  	</string-array>
+  	<string-array name="dossbtype">
+  		<item>Disable SB Emulation</item>
+        <item>SoundBlaster 2.0 (faster)</item>
+  		<item>SoundBlaster Pro 1.0</item>
+  		<item>SoundBlaster Pro 2.0</item>
+  		<item>SoundBlaster 16 (default)</item>
+  	</string-array>
+  	<string-array name="dossbtype_values">
+  	    <item>none</item>
+  		<item>sb2</item>
+  		<item>sbpro1</item>
+  		<item>sbpro2</item>
+ 		<item>sb16</item>
+  	</string-array>	
+    <string-array name="dossbrate">
+  		<item>8000 Hz (faster)</item>
+  		<item>11025 Hz</item>
+  		<item>16000 Hz</item>
+  		<item>22050 Hz (default)</item>
+  		<item>32000 Hz</item>
+  		<item>44100 Hz (slower)</item>
+  	</string-array>
+  	<string-array name="dossbrate_values">
+  		<item>8000</item>
+ 		<item>11025</item>
+ 		<item>16000</item>
+ 		<item>22050</item>
+ 		<item>32000</item>
+ 		<item>44100</item>
+  	</string-array>	
+    <string-array name="dosmixerblocksize">
+  		<item>512 (faster)</item>
+  		<item>1024 (default)</item>
+  		<item>2048</item>
+  		<item>3072</item>
+  		<item>4096</item>
+  	</string-array>
+  	<string-array name="dosmixerblocksize_values">
+  		<item>512</item>
+ 		<item>1024</item>
+ 		<item>2048</item>
+ 		<item>3072</item>
+ 		<item>4096</item>
+  	</string-array>
+	<string-array name="doskblayout">
+  		<item>Auto (default)</item>
+  		<item>Belgium</item>
+  		<item>Brazil</item>
+  		<item>Canadian-French</item>
+  		<item>Czech</item>
+  		<item>Slovak</item>
+  		<item>Denmark</item>
+  		<item>Finland</item>
+  		<item>France</item>
+  		<item>Germany</item>
+  		<item>Hungary</item>
+  		<item>Italy</item>
+  		<item>Latin America</item>
+  		<item>Netherlands</item>
+  		<item>Norway</item>
+  		<item>Poland</item>
+  		<item>Portugal</item>
+  		<item>Spain</item>
+  		<item>Sweden</item>
+  		<item>Swiss(French)</item>
+  		<item>Swiss(German)</item>
+  		<item>UK</item>
+  		<item>USA</item>
+  		<item>Yugoslavia</item>	    
+  	</string-array>
+  	<string-array name="doskblayout_values">
+  		<item>auto</item>
+  		<item>be</item>
+  		<item>br</item>
+  		<item>cf</item>
+  		<item>cz</item>
+  		<item>sl</item>
+  		<item>dk</item>
+  		<item>su</item>
+  		<item>fr</item>
+  		<item>gr</item>
+  		<item>hu</item>
+  		<item>it</item>
+  		<item>la</item>
+  		<item>nl</item>
+  		<item>no</item>
+  		<item>pl</item>
+  		<item>po</item>
+  		<item>sp</item>
+  		<item>sv</item>
+  		<item>sf</item>
+  		<item>sg</item>
+  		<item>uk</item>
+  		<item>us</item>
+  		<item>yu</item>	    
+  	</string-array>
+  		
+  	<!--  APP CONFIGURATION  -->
+    <string-array name="confscalemode">
+  		<item>Fast Scale</item>
+  		<item>HQ Scale (slower)</item>
+  	</string-array>
+  	<string-array name="confscalemode_values">
+  		<item>0</item>
+  		<item>1</item>
+  	</string-array>
+    <string-array name="confscalelocation">
+  		<item>Center</item>
+  		<item>Top</item>
+  	</string-array>
+  	<string-array name="confscalelocation_values">
+  		<item>0</item>
+  		<item>1</item>
+  	</string-array>  	
+	<!--  ORIENTATION  -->
+  	<string-array name="confrotation">
+  		<item>Auto</item>
+  		<item>Portrait</item>
+  		<item>Landscape</item>
+  	</string-array>
+  	<string-array name="confrotation_values">
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2</item>
+  	</string-array>
+  	<string-array name="confoptimization">
+  		<item>Full Optmizations (default)</item>
+  		<item>ARMv7 Opts Only</item>
+  		<item>No Optimizations (slow)</item>
+  	</string-array>
+  	<string-array name="confoptimization_values">
+  		<item>2</item>
+  		<item>1</item>
+  		<item>0</item>
+  	</string-array>
+  		<string-array name="confslidingmenu">
+  		<item>Swipe at Margin</item>
+  		<item>Button Only</item>
+  	</string-array>
+  	<string-array name="confslidingmenu_values">
+  		<item>0</item>
+  		<item>1</item>
+   	</string-array> 
+  	<string-array name="confbuttonlocation">
+  		<item>Top</item>
+  		<item>Bottom</item>
+  	</string-array>
+  	<string-array name="confbuttonlocation_values">
+  		<item>0</item>
+  		<item>1</item>
+  	</string-array>  	  	
+    <string-array name="confinputmode">
+  		<item>TouchScreen Mouse</item>
+  	<!--	<item>TouchScreen Joystick</item> -->
+  		<item>Physical Mouse/Stylus</item>
+  		<item>Physical Joystick</item>
+  		<item>Scroll Screen</item>
+  	</string-array>
+  	<string-array name="confinputmode_values">
+  		<item>0</item>
+  	<!-- 	<item>1</item> -->
+  		<item>2</item>
+  		<item>3</item>
+  		<item>4</item>
+   	</string-array>
+    <string-array name="confmousetracking">
+  		<item>Absolute (experimental)</item>
+  		<item>Relative</item>
+  	</string-array>
+  	<string-array name="confmousetracking_values">
+  		<item>0</item>
+  		<item>1</item>
+   	</string-array>
+    <string-array name="confinputlatency">
+  		<item>Normal (default)</item>
+  		<item>Accurate (slow)</item>
+  	</string-array>
+  	<string-array name="confinputlatency_values">
+  		<item>0</item>
+  		<item>1</item>
+   	</string-array>   	
+   	<string-array name="confanalog_maps">
+   	    <item>Right Joy, Left Mouse</item>
+   	    <item>Left Joy, Right Mouse</item>
+   	    <item>Disabled</item>
+   	</string-array>
+   	<string-array name="confanalog_maps_values">
+   	    <item>0</item>
+   	    <item>1</item>
+   	    <item>2</item>
+   	</string-array>
+   	<string-array name="confcontroller">
+  		<item>DPAD Only</item>
+  		<item>Xperia Play</item>
+  		<item>XBox 360</item>
+  		<!-- <item>Generic USB</item> -->
+  		<item>Custom</item>
+  	</string-array>
+  	<string-array name="confcontroller_values">
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2</item>
+  		<item>3</item>
+  		<!-- <item>4</item>  -->
+   	</string-array>   	
+  		
+  	<!-- KEYMAPS -->
+    <string-array name="confmapbutton">
+        <item>None</item>
+        <item>L.CTRL</item>
+        <item>R.CTRL</item>
+  		<item>L.ALT</item>
+  		<item>R.ALT</item>
+  		<item>L.SHIFT</item>
+  		<item>R.SHIFT</item>
+  		<item>ESC</item>
+  		<item>TAB</item>
+  		<item>ENTER</item>
+  		<item>SPACE</item>
+  		<item>F1</item>
+  		<item>F2</item>
+  		<item>F3</item>
+  		<item>F4</item>
+  		<item>F5</item>
+  		<item>F6</item>
+  		<item>F7</item>
+  		<item>F8</item>
+  		<item>F9</item>
+  		<item>F10</item>
+  		<item>F11</item>
+  		<item>F12</item>
+  		<item>a</item>
+  		<item>b</item>
+  		<item>c</item>
+  		<item>d</item>
+  		<item>e</item>
+  		<item>f</item>
+  		<item>g</item>
+  		<item>h</item>
+  		<item>i</item>
+  		<item>j</item>
+  		<item>k</item>
+  		<item>l</item>
+  		<item>m</item>
+  		<item>n</item>
+  		<item>o</item>
+  		<item>p</item>
+  		<item>q</item>
+  		<item>r</item>
+  		<item>s</item>
+  		<item>t</item>
+  		<item>u</item>
+  		<item>v</item>
+  		<item>w</item>
+  		<item>x</item>
+  		<item>y</item>
+  		<item>z</item>
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2</item>
+  		<item>3</item>
+  		<item>4</item>
+  		<item>5</item>
+  		<item>6</item>
+  		<item>7</item>
+  		<item>8</item>
+  		<item>9</item>
+  		
+  		<item>SEMICOLON</item>
+  		<item>APOSTROPHE</item>
+  		<item>COMMA</item>
+  		<item>PERIOD</item>
+  		<item>SLASH</item>
+  		<item>BACKSPACE</item>
+  		<item>DELETE</item>
+  		<item>L.BRACKET</item>
+  		<item>R.BRACKET</item>
+  		<item>PLUS</item>
+  		<item>MINUS</item>
+  		
+  		<item>Numpad 0</item>
+  		<item>Numpad 1</item>
+  		<item>Numpad 2</item>
+  		<item>Numpad 3</item>
+  		<item>Numpad 4</item>
+  		<item>Numpad 5</item>
+  		<item>Numpad 6</item>
+  		<item>Numpad 7</item>
+  		<item>Numpad 8</item>
+  		<item>Numpad 9</item>
+  		<item>Numpad Add</item>
+  		<item>Numpad Divide</item>
+  		<item>Numpad Dot</item>
+  		<item>Numpad Enter</item>
+  		<item>Numpad Multiply</item>
+  		<item>Numpad Subtract</item>
+  		<item>Numpad Numlock</item>
+
+  		<item>Page Up</item>
+  		<item>Page Down</item>
+  		<item>Home</item>
+  		<item>End</item>
+  		<item>Insert</item>
+  		
+  		<item>DPad Up</item>
+  		<item>Dpad Down</item>
+  		<item>Dpad Left</item>
+  		<item>Dpad Right</item>
+  		<item>DPad Center</item>
+  		<item>Left Mouse</item>
+  		<item>Right Mouse</item>
+  		<item>Joy BTN A</item>
+  		<item>Joy BTN B</item>
+  		
+  		<item>Cycles Up</item>
+  		<item>Cycles Down</item>
+  		<item>Show Keyboard</item>
+  		<item>Show Special Keys</item>
+  		<item>Show Cycles Menu</item>
+  		<item>Show FrameSkip Menu</item>
+  		<item>Fast Forward</item>
+  	</string-array>
+  	<string-array name="confmapbutton_values">
+  		<item>0</item>
+  		<item>113</item>
+  		<item>114</item>
+  		<item>57</item>
+  		<item>58</item>
+  		<item>59</item>
+  		<item>60</item>
+  		<item>111</item>
+  		<item>61</item>
+  		<item>66</item>
+  		<item>62</item>
+  		<item>131</item>
+  		<item>132</item>
+  		<item>133</item>
+  		<item>134</item>
+  		<item>135</item>
+  		<item>136</item>
+   		<item>137</item>
+  		<item>138</item>
+  		<item>139</item>
+  		<item>140</item>
+  		<item>141</item>
+  		<item>142</item>
+  		<item>29</item>
+  		<item>30</item>
+  		<item>31</item>
+  		<item>32</item>
+  		<item>33</item>
+  		<item>34</item>
+  		<item>35</item>
+  		<item>36</item>
+  		<item>37</item>
+  		<item>38</item>
+  		<item>39</item>
+  		<item>40</item>
+  		<item>41</item>
+  		<item>42</item>
+  		<item>43</item>
+  		<item>44</item>
+  		<item>45</item>
+  		<item>46</item>
+  		<item>47</item>
+  		<item>48</item>
+  		<item>49</item>
+  		<item>50</item>
+  		<item>51</item>
+  		<item>52</item>
+  		<item>53</item>
+  		<item>54</item>
+  		<item>7</item>
+  		<item>8</item>
+  		<item>9</item>
+  		<item>10</item>
+  		<item>11</item>
+  		<item>12</item>
+  		<item>13</item>
+  		<item>14</item>
+  		<item>15</item>
+  		<item>16</item>
+  		
+  		<item>74</item>
+  		<item>75</item>
+  		<item>55</item>
+  		<item>56</item>
+  		<item>76</item>
+  		<item>67</item>
+  		<item>112</item>
+  		<item>71</item>
+  		<item>72</item>
+  		<item>81</item>
+  		<item>69</item>
+  		
+  		<item>144</item>
+  		<item>145</item>
+  		<item>146</item>
+  		<item>147</item>
+  		<item>148</item>
+  		<item>149</item>
+  		<item>150</item>
+  		<item>151</item>
+  		<item>152</item>
+  		<item>153</item>
+  		<item>157</item>
+		<item>154</item>
+		<item>158</item>
+		<item>160</item>
+		<item>155</item>
+		<item>156</item>
+		<item>143</item>
+  				
+		<item>92</item>
+  		<item>93</item>
+  		<item>122</item>
+  		<item>123</item>
+  		<item>124</item>
+		
+  		<item>19</item>
+  		<item>20</item>
+  		<item>21</item>
+  		<item>22</item>
+  		<item>23</item>
+  		<item>20000</item>
+  		<item>20001</item>
+  		<item>20009</item>
+  		<item>20010</item>
+  		
+  		<item>20002</item>
+  		<item>20003</item>
+  		<item>20004</item>
+  		<item>20005</item>
+  		<item>20006</item>
+  		<item>20007</item>
+  		<item>20008</item>  		
+	 </string-array>	  
+  	<!-- GESTURES -->
+    <string-array name="confgesture_swipe">
+ 		<item>None</item>
+        <item>Show Keyboard</item>
+  		<item>Hide Keyboard</item>
+        <item>Show Menu</item>
+  		<item>Hide Menu</item>
+  		<item>Show Special Keys</item>
+  		<item>Show Cycles Menu</item>
+  		<item>Show FrameSkip Menu</item>
+ 	</string-array>
+  	<string-array name="confgesture_swipe_values">
+  		<item>0</item>
+  		<item>1</item>
+  		<item>2</item>
+  		<item>3</item>
+  		<item>4</item>
+  		<item>5</item>
+  		<item>6</item>
+  		<item>7</item>
+  	</string-array>
+    <string-array name="confgesture_singletap">
+ 		<item>None</item>
+        <item>Left Click (default)</item>
+  		<item>Right Click</item>
+  	</string-array>
+  	<string-array name="confgesture_singletap_values">
+  		<item>0</item>
+  		<item>3</item>
+  		<item>4</item>
+  	</string-array>
+  	<string-array name="confgesture_doubletap">
+ 		<item>None</item>
+        <item>Left Click</item>
+  		<item>Right Click (default)</item>
+  		<item>Double L. Click</item>
+  	</string-array>
+  	<string-array name="confgesture_doubletap_values">
+  		<item>0</item>
+  		<item>3</item>
+  		<item>4</item>
+  		<item>5</item>
+  	</string-array>
+</resources>

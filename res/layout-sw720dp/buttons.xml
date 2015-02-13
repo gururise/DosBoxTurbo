@@ -1,0 +1,48 @@
+<com.fishstix.dosboxfree.ButtonLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ButtonLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="bottom"
+	android:gravity="bottom">
+
+    <Button
+        android:id="@+id/ButtonA"
+        android:layout_width="0px"
+        android:layout_height="35dp"
+        android:layout_weight="0.25"
+        android:text="Btn A"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/transyellow" />
+
+    <Button
+        android:id="@+id/ButtonB"
+        android:layout_width="0px"
+        android:layout_height="35dp"
+        android:layout_weight="0.25"
+        android:text="Btn B"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/transyellow" />
+    
+    <Button
+        android:id="@+id/ButtonC"
+        android:layout_width="0px"
+        android:layout_height="35dp"
+        android:layout_weight="0.25"
+        android:text="Btn C"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/transyellow" />
+    
+    <Button
+        android:id="@+id/ButtonD"
+        android:layout_width="0px"
+        android:layout_height="35dp"
+        android:layout_weight="0.25" 
+        android:text="Btn D"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/transyellow" />
+    
+</com.fishstix.dosboxfree.ButtonLayout>
