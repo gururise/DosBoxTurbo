@@ -653,7 +653,7 @@ public class DosBoxPreferences extends PreferenceActivity implements OnSharedPre
 		} else if (preference == doseditconf_file) {
 			// setup intent
 			Intent intent = new Intent(Intent.ACTION_EDIT); 
-			Uri uri = Uri.parse(prefs.getString("dosmanualconf_file","")); 
+			Uri uri = Uri.parse("file://"+prefs.getString("dosmanualconf_file","")); 
 			intent.setDataAndType(uri, "text/plain"); 
 			// Check if file exists, if not, copy template
 			File f = new File(prefs.getString("dosmanualconf_file",""));
