@@ -24,8 +24,7 @@ src/shell \
 
 MY_PATH := $(LOCAL_PATH)
 
-#Fix me
-LOCAL_PATH := "/home/gene/workspace/com.fishstix.dosboxfree/jni/dosbox"
+LOCAL_PATH := $(abspath $(LOCAL_PATH))
 
 CG_SRCDIR := $(LOCAL_PATH)
 LOCAL_CFLAGS :=	-I$(LOCAL_PATH)/include \

@@ -10,7 +10,7 @@ CG_SUBDIRS := .\
 
 MY_PATH := $(LOCAL_PATH)
 
-LOCAL_PATH := "/home/gene/workspace/com.fishstix.dosboxfree/jni/fishstix_util"
+LOCAL_PATH := $(abspath $(LOCAL_PATH))
 
 CG_SRCDIR := $(LOCAL_PATH)
 LOCAL_CFLAGS :=	-I$(LOCAL_PATH)/include \
