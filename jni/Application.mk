@@ -5,4 +5,4 @@ APP_STL := stlport_static
 APP_PLATFORM := android-9
 APP_OPTIM := release
 
-NDK_TOOLCHAIN_VERSION := 4.6
+NDK_TOOLCHAIN_VERSION := 4.8
